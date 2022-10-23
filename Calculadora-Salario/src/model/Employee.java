@@ -3,10 +3,10 @@ package model;
 public class Employee {
     private String name;
     private String email;
-    private Integer salary;
+    private Double salary;
     private Role role;
 
-    public Employee(String name, String email, Integer salary, Role role) {
+    public Employee(String name, String email, Double salary, Role role) {
         this.name = name;
         this.email = email;
         this.salary = salary;
@@ -21,7 +21,7 @@ public class Employee {
         return this.email;
     }
 
-    public Integer getSalary() {
+    public Double getSalary() {
         return this.salary;
     }
 
