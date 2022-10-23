@@ -18,7 +18,10 @@ public class Calculator {
             return employee.getSalary() - employee.getSalary() * 0.25;
         }
         else {
-            return employee.getSalary() - employee.getSalary() * 0.20;
+            if (employee.getSalary() < 5000)
+                return employee.getSalary() - employee.getSalary() * 0.20;
+
+            return employee.getSalary() - employee.getSalary() * 0.30;
         }
 
     }
