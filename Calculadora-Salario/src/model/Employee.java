@@ -4,9 +4,9 @@ public class Employee {
     private String name;
     private String email;
     private Integer salary;
-    private String role;
+    private Role role;
 
-    public Employee(String name, String email, Integer salary, String role) {
+    public Employee(String name, String email, Integer salary, Role role) {
         this.name = name;
         this.email = email;
         this.salary = salary;
