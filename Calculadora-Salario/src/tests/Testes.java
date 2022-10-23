@@ -14,5 +14,6 @@ public class Testes {
         assertEquals("Rhaenyra Targaryen", employee.getName());
         assertEquals("rhaenyra.targaryen@gmail.com", employee.getEmail());
         assertEquals(2000, employee.getSalary());
+        assertEquals(Role.DESENVOLVEDOR, employee.getRole());
     }
 }
