@@ -1,8 +1,8 @@
 package tests;
 
+import calculator.Calculator;
 import model.Employee;
 import model.Role;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,6 +22,6 @@ public class Testes {
     public void calculateSalaryDesenvolvedorLessThan3000() {
         Employee employee = new Employee("Rhaenyra Targaryen", "rhaenyra.targaryen@gmail.com", 2999.99, Role.DESENVOLVEDOR);
         Double netSalary = Calculator.calculateSalary(employee);
-        assertEquals(employee.getSalary() - employee.getSalary() * 0.1, netSalary);
+        assertEquals(2699.991, netSalary);
     }
 }
