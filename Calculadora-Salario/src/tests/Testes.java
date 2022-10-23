@@ -71,4 +71,11 @@ public class Testes {
         netSalary = Calculator.calculateSalary(employeeGreater);
         assertEquals(1500.75, netSalary);
     }
+
+    @Test
+    public void calculateSalaryGerenteLessThan5000() {
+        Employee employee = new Employee("Corlys Velaryon", "rhaenys.velaryon@gmail.com", 4999.99, Role.GERENTE);
+        Double netSalary = Calculator.calculateSalary(employee);
+        assertEquals(3999.992, netSalary);
+    }
 }
