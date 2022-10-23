@@ -31,15 +31,26 @@ public class Testes {
         Double netSalary = Calculator.calculateSalary(employeeEqual);
         assertEquals(2400, netSalary);
 
-        Employee employeeGreater = new Employee("Daemon Targaryen", "daemon.targaryen@gmail.com", 3001.00, Role.DESENVOLVEDOR);
+        Employee employeeGreater = new Employee("Viserys Targaryen", "viserys.targaryen@gmail.com", 3001.00, Role.DESENVOLVEDOR);
         netSalary = Calculator.calculateSalary(employeeGreater);
         assertEquals(2400.8, netSalary);
     }
 
     @Test
     public void calculateSalaryDBALessThan2000() {
-        Employee employee = new Employee("Alicent Hightower", "alicent.hightower@gmail.com", 1999.99, Role.DBA);
+        Employee employee = new Employee("Otto Hightower", "otto.hightower@gmail.com", 1999.99, Role.DBA);
         Double netSalary = Calculator.calculateSalary(employee);
         assertEquals(1699.9915, netSalary);
+    }
+
+    @Test
+    public void calculateSalaryDBAGreaterOrEqual2000() {
+        Employee employeeEqual = new Employee("Harwin Strong", "harwin.strong@gmail.com", 2000.00, Role.DBA);
+        Double netSalary = Calculator.calculateSalary(employeeEqual);
+        assertEquals(1500.00, netSalary);
+
+        Employee employeeGreater = new Employee("Larys Strong", "larys.strong@gmail.com", 2001.00, Role.DBA);
+        netSalary = Calculator.calculateSalary(employeeGreater);
+        assertEquals(1500.75, netSalary);
     }
 }
