@@ -81,12 +81,12 @@ public class Testes {
 
     @Test
     public void calculateSalaryGerenteGreaterOrEqual5000() {
-        Employee employeeEqual = new Employee("Jacaerys Velaryon", "jacaerys.velaryon@gmail.com", 5000.00, Role.TESTADOR);
+        Employee employeeEqual = new Employee("Jacaerys Velaryon", "jacaerys.velaryon@gmail.com", 5000.00, Role.GERENTE);
         Double netSalary = Calculator.calculateSalary(employeeEqual);
         assertEquals(3500.00, netSalary);
 
-        Employee employeeGreater = new Employee("Lucerys Velaryon", "lucerys.velaryon@gmail.com", 5001.00, Role.TESTADOR);
+        Employee employeeGreater = new Employee("Lucerys Velaryon", "lucerys.velaryon@gmail.com", 5001.00, Role.GERENTE);
         netSalary = Calculator.calculateSalary(employeeGreater);
-        assertEquals(3499.70, netSalary);
+        assertEquals(3500.70, netSalary);
     }
 }
