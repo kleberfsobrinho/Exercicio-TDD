@@ -16,10 +16,16 @@ public class Employee {
     public String getName() {
         return this.name;
     }
+
     public String getEmail() {
         return this.email;
     }
+
     public Integer getSalary() {
         return this.salary;
+    }
+
+    public Role getRole() {
+        return this.role;
     }
 }
