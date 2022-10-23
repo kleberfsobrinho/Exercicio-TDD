@@ -60,4 +60,15 @@ public class Testes {
         Double netSalary = Calculator.calculateSalary(employee);
         assertEquals(1699.9915, netSalary);
     }
+
+    @Test
+    public void calculateSalaryTestadorGreaterOrEqual2000() {
+        Employee employeeEqual = new Employee("Aemond Targaryen", "aemond.targaryen@gmail.com", 2000.00, Role.TESTADOR);
+        Double netSalary = Calculator.calculateSalary(employeeEqual);
+        assertEquals(1500.00, netSalary);
+
+        Employee employeeGreater = new Employee("Aegon Targaryen", "aegon.targaryen@gmail.com", 2001.00, Role.TESTADOR);
+        netSalary = Calculator.calculateSalary(employeeGreater);
+        assertEquals(1500.75, netSalary);
+    }
 }
