@@ -20,8 +20,19 @@ public class Testes {
 
     @Test
     public void calculateSalaryDesenvolvedorLessThan3000() {
-        Employee employee = new Employee("Rhaenyra Targaryen", "rhaenyra.targaryen@gmail.com", 2999.99, Role.DESENVOLVEDOR);
+        Employee employee = new Employee("Alicent Hightower", "alicent.hightower@gmail.com", 2999.99, Role.DESENVOLVEDOR);
         Double netSalary = Calculator.calculateSalary(employee);
         assertEquals(2699.991, netSalary);
+    }
+
+    @Test
+    public void calculateSalaryDesenvolvedorGreaterOrEqual3000() {
+        Employee employeeEqual = new Employee("Daemon Targaryen", "daemon.targaryen@gmail.com", 3000.00, Role.DESENVOLVEDOR);
+        Double netSalary = Calculator.calculateSalary(employeeEqual);
+        assertEquals(2400, netSalary);
+
+        Employee employeeGreater = new Employee("Daemon Targaryen", "daemon.targaryen@gmail.com", 3001.00, Role.DESENVOLVEDOR);
+        netSalary = Calculator.calculateSalary(employeeGreater);
+        assertEquals(2399.8, netSalary);
     }
 }
