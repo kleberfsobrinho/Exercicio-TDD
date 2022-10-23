@@ -33,6 +33,6 @@ public class Testes {
 
         Employee employeeGreater = new Employee("Daemon Targaryen", "daemon.targaryen@gmail.com", 3001.00, Role.DESENVOLVEDOR);
         netSalary = Calculator.calculateSalary(employeeGreater);
-        assertEquals(2399.8, netSalary);
+        assertEquals(2400.8, netSalary);
     }
 }
