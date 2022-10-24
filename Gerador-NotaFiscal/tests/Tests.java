@@ -67,4 +67,11 @@ public class Tests {
 		assertEquals(NotaFiscalDao.salva(bill), expected);
 	}
 	
+	@Test
+	public void envia() {
+		Bill bill = new Bill("Casimiro Miguel", "Rio de Janeiro", Service.OUTRO, 6700.00);
+		String expected = "enviando por email";
+		assertEquals(SAP.envia(bill), expected);
+	}
+	
 }
