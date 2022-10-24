@@ -29,5 +29,11 @@ public class Tests {
         Double taxes = Generator.calculateTaxes(bill);
         assertEquals(375, taxes);
     }
-
+	
+	@Test
+	public void calculateTaxesTreinamento() {
+		Bill bill = new Bill("Klebinho Sobrinho Cabelinho", "Rua da Consolação 40", Service.TREINAMENTO, 2400.00);
+        Double taxes = Generator.calculateTaxes(bill);
+        assertEquals(360, taxes);
+	}
 }
