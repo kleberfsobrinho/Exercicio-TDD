@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions;
 
 import org.junit.jupiter.api.Test;
 
@@ -50,4 +51,18 @@ public class Tests {
 		assertEquals(1600.00, bill.getSalary());
 		assertEquals(400, Generator.calculateTaxes(bill));
 	}
+	
+	@Test
+	public void failCalculateTaxesConsultoria() {
+        Bill bill = new Bill("Juliette", "Pedregal 50", Service.CONSULTORIA, 1500.00);
+        Double taxes = Generator.calculateTaxes(bill);
+        Assertions.assertNotEquals(taxes, 0);
+    }
+	
+	@Test
+	public void salva() {
+		Bill bill = new Bill("John Doe", "Rua Costa Agua 20", Service.CONSULTORIA, 600.00);
+		assertEquals("salvando no banco", Dao.salva(bill));
+	}
+	
 }
