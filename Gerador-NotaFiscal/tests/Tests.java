@@ -75,4 +75,11 @@ public class Tests {
 		assertEquals(SAP.envia(bill), expected);
 	}
 	
+	@Test
+	public void enviaSmtp() {
+		Bill bill = new Bill("Rodrigo Faro", "Sao Paulo", Service.TREINAMENTO, 600.00);
+		String expected = "enviando por Smtp";
+		assertEquals(Smtp.envia(bill), expected);
+	}
+	
 }
