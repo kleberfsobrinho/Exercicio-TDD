@@ -22,7 +22,9 @@ public class Generator {
 		 else if (bill.getService().equals(Service.TREINAMENTO)) {
 			 return bill.getSalary() * 0.15;
 		 }
-		return null;
+		 else {
+			 return bill.getSalary() * 0.6;
+		 }
 	}
 
 }
