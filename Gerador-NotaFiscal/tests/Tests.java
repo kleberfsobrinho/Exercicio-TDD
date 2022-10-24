@@ -36,4 +36,11 @@ public class Tests {
         Double taxes = Generator.calculateTaxes(bill);
         assertEquals(360, taxes);
 	}
+	
+	@Test
+	public void calculateTaxesOutro() {
+		Bill bill = new Bill("Pato Donald Siqueira", "Walt Disney World Orlando 70", Service.OUTRO, 3000.00);
+        Double taxes = Generator.calculateTaxes(bill);
+        assertEquals(1800, taxes);
+	}
 }
