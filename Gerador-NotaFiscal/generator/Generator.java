@@ -5,25 +5,27 @@ import model.Service;
 
 public class Generator {
 	String clientName;
-	int value;
-	int fee;
+	Double valueBill;
+	static Double fee;
 
-	public Generator(String clientName, int value, int fee) {
+	public Generator(Bill bill) {
 		super();
-		this.clientName = clientName;
-		this.value = value;
-		this.fee = fee;
+		this.clientName = bill.getName();
+		this.valueBill = bill.getSalary();
 	}
 
 	public static Double calculateTaxes(Bill bill) {
 		 if (bill.getService().equals(Service.CONSULTORIA)) {
-			 return bill.getSalary() * 0.25;
+			 fee = bill.getSalary() * 0.25;
+			 return fee;
 	        }
 		 else if (bill.getService().equals(Service.TREINAMENTO)) {
-			 return bill.getSalary() * 0.15;
+			 fee = bill.getSalary() * 0.15;
+			 return fee;
 		 }
 		 else {
-			 return bill.getSalary() * 0.6;
+			 fee = bill.getSalary() * 0.6;
+			 return fee;
 		 }
 	}
 

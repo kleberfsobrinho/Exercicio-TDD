@@ -4,11 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import calculator.Calculator;
 import generator.Generator;
 import model.Bill;
-import model.Employee;
-import model.Role;
 import model.Service;
 
 public class Tests {
@@ -42,5 +39,15 @@ public class Tests {
 		Bill bill = new Bill("Pato Donald Siqueira", "Walt Disney World Orlando 70", Service.OUTRO, 3000.00);
         Double taxes = Generator.calculateTaxes(bill);
         assertEquals(1800, taxes);
+	}
+	
+	@Test
+	public void generateBill() {
+		Bill bill = new Bill("Chiquinha", "Turma do chaves", Service.CONSULTORIA, 1600.00);
+		assertEquals("Chiquinha", bill.getName());
+		assertEquals("Turma do chaves", bill.getAddress());
+		assertEquals(Service.CONSULTORIA, bill.getService());
+		assertEquals(1600.00, bill.getSalary());
+		assertEquals(400, Generator.calculateTaxes(bill));
 	}
 }
