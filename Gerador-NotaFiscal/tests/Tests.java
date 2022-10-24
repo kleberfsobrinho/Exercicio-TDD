@@ -61,8 +61,9 @@ public class Tests {
 	
 	@Test
 	public void salva() {
-		Bill bill = new Bill("John Doe", "Rua Costa Agua 20", Service.CONSULTORIA, 600.00);
-		assertEquals("salvando no banco", Dao.salva(bill));
+		Bill bill = new Bill("Bruna Marquezine", "Washington DC", Service.CONSULTORIA, 4500.00);
+		String expected = "salvando no banco";
+		assertEquals(expected, NotaFiscalDao.salva(bill));
 	}
 	
 }
