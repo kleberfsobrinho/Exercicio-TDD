@@ -4,9 +4,9 @@ public class Bill {
 	private String name;
     private String address;
     private Service service;
-    private int salary;
+    private Double salary;
 
-	public Bill(String name, String address, Service service, int salary) {
+	public Bill(String name, String address, Service service, Double salary) {
 		this.name = name;
         this.address = address;
         this.service = service;
@@ -21,7 +21,7 @@ public class Bill {
         return this.address;
     }
 
-    public int getSalary() {
+    public Double getSalary() {
         return this.salary;
     }
 

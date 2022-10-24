@@ -15,7 +15,7 @@ public class Tests {
 	
 	@Test
     public void createBill() {
-        Bill bill = new Bill("Luis Inacio Da Silva", "Rua Joao Agripino 80", Service.CONSULTORIA, 1500);
+        Bill bill = new Bill("Luis Inacio Da Silva", "Rua Joao Agripino 80", Service.CONSULTORIA, 1500.00);
 
         assertEquals("Luis Inacio Da Silva", bill.getName());
         assertEquals("Rua Joao Agripino 80", bill.getAddress());
@@ -25,8 +25,8 @@ public class Tests {
 	
 	@Test
 	public void calculateTaxesConsultoria() {
-        Bill bill = new Bill("Luis Inacio Da Silva", "Rua Joao Agripino 80", Service.CONSULTORIA, 1500);
-        int taxes = Generator.calculateTaxes(bill);
+        Bill bill = new Bill("Luis Inacio Da Silva", "Rua Joao Agripino 80", Service.CONSULTORIA, 1500.00);
+        Double taxes = Generator.calculateTaxes(bill);
         assertEquals(375, taxes);
     }
 
