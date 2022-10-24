@@ -4,8 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import calculator.Calculator;
 import generator.Generator;
 import model.Bill;
+import model.Employee;
+import model.Role;
 import model.Service;
 
 public class Tests {
@@ -18,6 +21,13 @@ public class Tests {
         assertEquals("Rua Joao Agripino 80", bill.getAddress());
         assertEquals(Service.CONSULTORIA, bill.getService());
         assertEquals(1500, bill.getSalary());
+    }
+	
+	@Test
+	public void calculateTaxesConsultoria() {
+        Bill bill = new Bill("Luis Inacio Da Silva", "Rua Joao Agripino 80", Service.CONSULTORIA, 1500);
+        int taxes = Generator.calculateTaxes(bill);
+        assertEquals(375, taxes);
     }
 
 }
