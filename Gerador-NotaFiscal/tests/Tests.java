@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import generator.Generator;
+import generator.NotaFiscalDao;
 import model.Bill;
 import model.Service;
 
@@ -63,7 +64,7 @@ public class Tests {
 	public void salva() {
 		Bill bill = new Bill("Bruna Marquezine", "Washington DC", Service.CONSULTORIA, 4500.00);
 		String expected = "salvando no banco";
-		assertEquals(expected, NotaFiscalDao.salva(bill));
+		assertEquals(NotaFiscalDao.salva(bill), expected);
 	}
 	
 }
