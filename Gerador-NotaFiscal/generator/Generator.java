@@ -19,6 +19,9 @@ public class Generator {
 		 if (bill.getService().equals(Service.CONSULTORIA)) {
 			 return bill.getSalary() * 0.25;
 	        }
+		 else if (bill.getService().equals(Service.TREINAMENTO)) {
+			 return bill.getSalary() * 0.15;
+		 }
 		return null;
 	}
 
